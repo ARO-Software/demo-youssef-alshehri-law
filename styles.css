@@ -57,6 +57,9 @@ body{
    the image to ribbons. Rules below that need a filled box set height
    explicitly and win on specificity. */
 img{max-width:100%;display:block;height:auto}
+/* the <picture> wrapper must not become a layout box, or height:100% on the
+   inner <img> would resolve against an inline element instead of the panel */
+picture{display:contents}
 iframe{border:0;display:block}
 ul{list-style:none;margin:0;padding:0}
 a{color:inherit}
@@ -317,7 +320,7 @@ p{margin:0}
 }
 
 .eyebrow{
-  font-size:.78rem;font-weight:500;
+  font-size:.78rem;font-weight:700;
   color:var(--brass);
   display:flex;align-items:center;gap:.6rem;
   margin-block-end:1.35rem;
@@ -366,7 +369,7 @@ h1{
   margin-block-start:2.25rem;
 }
 .tel-btn{gap:.5rem}
-.tel-btn .num{margin-inline-start:.15rem;font-weight:500}
+.tel-btn .num{margin-inline-start:.15rem;font-weight:700}
 
 .hero-facts{
   display:flex;flex-wrap:wrap;
@@ -434,7 +437,7 @@ h1{
 .about-fig{margin:0}
 .about-fig img{
   width:100%;
-  aspect-ratio:985/835;
+  aspect-ratio:900/763;
   object-fit:cover;
   border-radius:var(--r);
   box-shadow:0 24px 60px -28px rgba(12,35,64,.55);
@@ -548,7 +551,7 @@ bdi.cred-v{font-family:var(--ff-b)}
    Normal inline flow + a margin on the isolated number instead. */
 .loc-note{
   margin-block-start:1.1rem;
-  font-weight:500;color:var(--navy-800);
+  font-weight:700;color:var(--navy-800);
 }
 .loc-sub{
   margin-block-start:.35rem;
@@ -718,7 +721,7 @@ a.line-v:hover{color:var(--marble)}
 }
 
 @media (min-width:560px){
-  .about-fig img{aspect-ratio:985/835}
+  .about-fig img{aspect-ratio:900/763}
   .gal{grid-template-columns:repeat(2,1fr)}
   .gal-tall{grid-row:span 2}
   .gal-tall img{height:100%;aspect-ratio:auto;min-height:100%}

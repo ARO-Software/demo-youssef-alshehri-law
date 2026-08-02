@@ -23,7 +23,13 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap">
+<!-- Amiri is only ever set at 700 and Tajawal at 300/400/700 — asking for
+     unused weights costs a ~100KB Arabic subset each. Loaded non-render-blocking;
+     display=swap means the fallback stack paints immediately. -->
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@300;400;700&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@300;400;700&display=swap"></noscript>
+<link rel="preload" as="image" type="image/webp" href="assets/riyadh-exterior.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 
 <script>document.documentElement.className = "js";</script>
@@ -125,7 +131,10 @@
     </div>
   </div>
   <div class="hero-img">
-    <img src="assets/riyadh-exterior.jpg" width="1280" height="1707" alt="واجهة مبنى حجري بأعمدة رأسية ونخيل تحت سماء الرياض" fetchpriority="high" decoding="async">
+    <picture>
+      <source srcset="assets/riyadh-exterior.webp" type="image/webp">
+      <img src="assets/riyadh-exterior.jpg" width="1100" height="1467" alt="واجهة مبنى حجري بأعمدة رأسية ونخيل تحت سماء الرياض" fetchpriority="high" decoding="async">
+    </picture>
     <span class="hero-img-veil" aria-hidden="true"></span>
   </div>
 </section>
@@ -134,8 +143,11 @@
 <section class="sec sec-marble" id="about">
   <div class="wrap about-grid">
     <figure class="about-fig reveal">
-      <img src="assets/plaque.jpg" width="985" height="835" loading="lazy" decoding="async"
-           alt="لوحة مكتب المحامي يوسف بن عامر الشهري بالأزرق والذهبي، وعليها اسم المكتب وأرقام التواصل ورقم الترخيص">
+      <picture>
+        <source srcset="assets/plaque.webp" type="image/webp">
+        <img src="assets/plaque.jpg" width="900" height="763" loading="lazy" decoding="async"
+             alt="لوحة مكتب المحامي يوسف بن عامر الشهري بالأزرق والذهبي، وعليها اسم المكتب وأرقام التواصل ورقم الترخيص">
+      </picture>
       <figcaption>لوحة المكتب — الدور الأول، مكتب <bdi class="num" dir="ltr">١٣</bdi></figcaption>
     </figure>
 
@@ -224,16 +236,25 @@
 
     <div class="gal">
       <figure class="gal-i gal-tall reveal">
-        <img src="assets/office-lounge.jpg" width="1080" height="1920" loading="lazy" decoding="async"
-             alt="مجلس الاستقبال داخل المكتب مع طاولة وضيافة عربية">
+        <picture>
+          <source srcset="assets/office-lounge.webp" type="image/webp">
+          <img src="assets/office-lounge.jpg" width="900" height="1600" loading="lazy" decoding="async"
+               alt="مجلس الاستقبال داخل المكتب مع طاولة وضيافة عربية">
+        </picture>
       </figure>
       <figure class="gal-i reveal">
-        <img src="assets/office-wide.jpg" width="1280" height="960" loading="lazy" decoding="async"
-             alt="منظر واسع لمكتب المحاماة يظهر مكتب العمل ومجلس الضيوف">
+        <picture>
+          <source srcset="assets/office-wide.webp" type="image/webp">
+          <img src="assets/office-wide.jpg" width="1100" height="825" loading="lazy" decoding="async"
+               alt="منظر واسع لمكتب المحاماة يظهر مكتب العمل ومجلس الضيوف">
+        </picture>
       </figure>
       <figure class="gal-i reveal">
-        <img src="assets/office-desk.jpg" width="1280" height="720" loading="lazy" decoding="async"
-             alt="ركن مكتب العمل مع خزانة الملفات ومقاعد المراجعين">
+        <picture>
+          <source srcset="assets/office-desk.webp" type="image/webp">
+          <img src="assets/office-desk.jpg" width="1100" height="619" loading="lazy" decoding="async"
+               alt="ركن مكتب العمل مع خزانة الملفات ومقاعد المراجعين">
+        </picture>
       </figure>
     </div>
   </div>

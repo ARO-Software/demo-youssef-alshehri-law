@@ -14,13 +14,13 @@
 ## About this build
 
 A single-page, fully static demo site — no backend, no build step, no external
-JS libraries. Three files plus local images:
+JS libraries:
 
 ```
-index.html
-styles.css
-script.js
-assets/   plaque.jpg · office-wide.jpg · office-desk.jpg · office-lounge.jpg · riyadh-exterior.jpg
+index.html   markup + inlined CSS (inlined to drop a render-blocking round trip)
+script.js    deferred, ~3.6KB, vanilla — pure progressive enhancement
+assets/      plaque · office-wide · office-desk · office-lounge · riyadh-exterior
+             each as .webp with a .jpg fallback, sized to 2x of its largest box
 ```
 
 ### Art direction

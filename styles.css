@@ -694,16 +694,18 @@ a.line-v:hover{color:var(--marble)}
 .js .he-4{animation-delay:.38s}
 .js .he-5{animation-delay:.5s}
 .js .he-6{animation-delay:.62s}
-.js .hero-img img{animation:heroImg 1.6s var(--e) both;animation-delay:.1s}
+.js .hero-img img{animation:heroImg 1.5s var(--e) both}
 .js .colonnade{animation:fins 1.4s var(--e) both;animation-delay:.25s}
 
 @keyframes rise{
   from{opacity:0;transform:translateY(22px)}
   to{opacity:1;transform:none}
 }
+/* deliberately transform-only: fading the hero photo up from opacity 0 makes
+   the browser treat it as not-yet-painted and pushes LCP out by ~1.2s */
 @keyframes heroImg{
-  from{opacity:0;transform:scale(1.07)}
-  to{opacity:1;transform:none}
+  from{transform:scale(1.06)}
+  to{transform:none}
 }
 @keyframes fins{
   from{opacity:0;transform:translateY(-14px)}
@@ -806,7 +808,7 @@ a.line-v:hover{color:var(--marble)}
     transform:none !important;
     animation:none !important;
   }
-  .js .hero-img img{opacity:1 !important;transform:none !important;animation:none !important}
+  .js .hero-img img{transform:none !important;animation:none !important}
   .js .colonnade{opacity:var(--col-o) !important;transform:none !important;animation:none !important}
   .gal-i:hover img{transform:none}
 }

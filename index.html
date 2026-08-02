@@ -83,7 +83,6 @@ body{
   line-height:1.85;
   overflow-x:clip;
   -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
 }
 
 /* height:auto is load-bearing — the width/height attributes on each <img>
@@ -604,7 +603,7 @@ bdi.cred-v{font-family:var(--ff-b)}
   border:1px solid rgba(12,35,64,.16);
   box-shadow:0 20px 50px -30px rgba(12,35,64,.5);
 }
-.map iframe{width:100%;aspect-ratio:4/3;filter:saturate(.85) contrast(1.02)}
+.map iframe{width:100%;aspect-ratio:4/3}
 
 /* ══ CONTACT ══ */
 .sec-contact{overflow:hidden}
@@ -716,9 +715,8 @@ a.line-v:hover{color:var(--marble)}
   opacity:0;
   transform:translateY(18px);
   transition:opacity .85s var(--e),transform .85s var(--e);
-  will-change:opacity,transform;
 }
-.js .reveal.is-in{opacity:1;transform:none;will-change:auto}
+.js .reveal.is-in{opacity:1;transform:none}
 
 .js .he-1,.js .he-2,.js .he-3,.js .he-4,.js .he-5,.js .he-6{
   animation:rise 1s var(--e) both;
